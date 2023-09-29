@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="form">
+    <form (ngSubmit)="AgeCalculate()" #ageForm="ngForm">
+      <div class="input_label">
+        <label for="Day">DAY</label>
+        <input
+          type="number"
+          placeholder="DD"
+          name="Day"
+          required
+          [(ngModel)]="Day"
+          #dayField="ngModel"
+          class="no_spinners"
+        />
+      </div>
+
+      <div class="input_label">
+        <label for="Month">MONTH</label>
+        <input
+          type="number"
+          placeholder="MM"
+          name="Month"
+          [(ngModel)]="Month"
+          required
+          #monthField="ngModel"
+          class="no_spinners"
+        />
+      </div>
+
+      <div class="input_label">
+        <label for="Year">YEAR</label>
+        <input
+          type="number"
+          placeholder="YYYY"
+          name="Year"
+          [(ngModel)]="Year"
+          required
+          #yearField="ngModel"
+          class="no_spinners"
+        />
+      </div>
+
+      <div class="button-container">
+        <hr />
+        <button type="submit" (click)="AgeCalculate()"></button>
+      </div>
+    </form>
+  </div>
+
+  <div class="age">
+    <div class="ageIs">
+      <span class="hyphen">{{
+        AgeY !== undefined ? (AgeY < 10 ? "0" + AgeY : AgeY) : "--"
+      }}</span>
+      years
+    </div>
+    <div class="ageIs">
+      <span class="hyphen">{{
+        AgeM !== undefined ? (AgeM < 10 ? "0" + AgeM : AgeM) : "--"
+      }}</span>
+      months
+    </div>
+    <div class="ageIs">
+      <span class="hyphen">{{
+        AgeD !== undefined ? (AgeD < 10 ? "0" + AgeD : AgeD) : "--"
+      }}</span>
+      days
+    </div>
+  </div>
+</div>
